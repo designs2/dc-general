@@ -38,6 +38,10 @@ class DefaultLanguageInformation implements LanguageInformationInterface
      */
     protected $country;
 
+    protected $strLangCodeDelimiter = '-';
+
+ 
+
     /**
      * Create a new instance.
      *
@@ -49,6 +53,11 @@ class DefaultLanguageInformation implements LanguageInformationInterface
     {
         $this->language = $language;
         $this->country  = $country;
+    }
+
+    public function setLangCodeDelimiter($strDelimiter)
+    {
+        $this->strLangCodeDelimiter = $strDelimiter;
     }
 
     /**
@@ -73,7 +82,7 @@ class DefaultLanguageInformation implements LanguageInformationInterface
     public function getLocale()
     {
         if ($this->getCountryCode()) {
-            return $this->getLanguageCode() . '_' . $this->getCountryCode();
+            return $this->getLanguageCode() . $this->strLangCodeDelimiter . $this->getCountryCode();
         }
 
         return $this->getLanguageCode();
