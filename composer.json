@@ -45,7 +45,7 @@
     },
     "require": {
         "php": ">=5.3",
-        "contao/core": ">=3.2,<3.6",
+        "contao/core": ">=3.2,<3.7",
         "contao-community-alliance/composer-plugin": "*",
         "designs2/event-dispatcher": "*",
         "designs2/translator": "*",
